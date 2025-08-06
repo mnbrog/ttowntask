@@ -8,7 +8,7 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-function Seo({ description, title, children }) {
+function Seo({ description, title, children, schema }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -37,6 +37,9 @@ function Seo({ description, title, children }) {
       <meta name="twitter:creator" content={site.siteMetadata?.author || ``} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
+      {schema && (
+        <script type="application/ld+json">{JSON.stringify(schema)}</script>
+      )}
       {children}
     </>
   )

@@ -1,128 +1,67 @@
-import * as React from "react"
+import React from "react"
 import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
+import ServiceCard from "../components/service-card"
+import { services } from "../data/services"
 
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-  },
-  {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-  },
-]
+const IndexPage = () => {
+  return (
+    <Layout>
+      <section className="text-center py-20 bg-gray-50">
+        <h1 className="text-4xl font-bold mb-6">
+          No Job Too Small, We Do It All.
+        </h1>
+        <Link
+          to="/schedule"
+          className="inline-block bg-indigo-600 text-white px-8 py-3 rounded-md text-lg"
+        >
+          Book Now
+        </Link>
+      </section>
+      <section className="py-16">
+        <h2 className="text-2xl font-bold text-center mb-8">Our Services</h2>
+        <div className="grid gap-6 md:grid-cols-3">
+          {services.slice(0, 3).map(service => (
+            <ServiceCard key={service.title} {...service} />
+          ))}
+        </div>
+        <div className="text-center mt-8">
+          <Link to="/services" className="text-indigo-600 underline">
+            View All Services
+          </Link>
+        </div>
+      </section>
+      <section className="py-16 bg-indigo-50">
+        <h2 className="text-2xl font-bold text-center mb-8">Why Choose Us</h2>
+        <ul className="max-w-2xl mx-auto space-y-4 text-lg text-center">
+          <li>Reliable and trustworthy team</li>
+          <li>Flexible scheduling to fit your needs</li>
+          <li>Transparent pricing with no surprises</li>
+        </ul>
+      </section>
+      <section className="bg-indigo-600 text-white py-12 text-center">
+        <p className="text-xl mb-4">Ready to get started?</p>
+        <Link
+          to="/schedule"
+          className="inline-block bg-white text-indigo-600 px-6 py-3 rounded-md font-semibold"
+        >
+          Book Now
+        </Link>
+      </section>
+    </Layout>
+  )
+}
 
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
-
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
-]
-
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
-
-const IndexPage = () => (
-  <Layout>
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
-      </p>
-    </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
-          >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
-  </Layout>
-)
-
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = () => <Seo title="Home" />
+export const Head = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "T Town Task",
+    telephone: "205-657-7554",
+    url: "https://ttowntask.com",
+  }
+  return <Seo title="Home" schema={schema} />
+}
 
 export default IndexPage
