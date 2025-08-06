@@ -4,6 +4,8 @@
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-ssr/
  */
 
+require("./src/styles/global.css")
+
 /**
  * @type {import('gatsby').GatsbySSR['onRenderBody']}
  */
