@@ -8,7 +8,7 @@ import reviews from '../../data/reviews.json';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" description="Collision repair you can trust" />
+    <SEO title="Home" description="No Job Too Small, We do it All." />
     <Hero />
     <ReviewCarousel reviews={reviews} />
     

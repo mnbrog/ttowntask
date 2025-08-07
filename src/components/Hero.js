@@ -8,6 +8,7 @@ const Wrapper = styled.section`
   position: relative;
   color: var(--white);
   text-align: center;
+  min-height: 80vh; /* Added to give the hero section a minimum height */
 `;
 
 const BgImage = styled(GatsbyImage)`
@@ -47,7 +48,17 @@ const Headline = styled.h1`
   }
 `;
 
-// New: Button container for side-by-side layout
+const Subheadline = styled.h2`
+  margin: 0 0 2rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+`;
+
 const ButtonRow = styled.div`
   display: flex;
   gap: 1rem;
@@ -73,7 +84,7 @@ const CTA = styled(Link)`
 const Hero = () => {
   const data = useStaticQuery(graphql`
     query {
-      heroImage: file(relativePath: { eq: "kgp-001.jpg" }) {
+      heroImage: file(relativePath: { eq: "ttthero.png" }) {
         childImageSharp {
           gatsbyImageData(
             layout: FULL_WIDTH
@@ -89,13 +100,14 @@ const Hero = () => {
 
   return (
     <Wrapper>
-      <BgImage image={image} alt="Professional auto body shop" />
+      <BgImage image={image} alt="Someone completing a home task" />
       <Overlay />
       <HeroContent>
-        <Headline>Collision Repair You Can Trust</Headline>
+        <Headline>No Job Too Small, We Do It All</Headline>
+        <Subheadline>Your trusted partner for home tasks, big and small.</Subheadline>
         <ButtonRow>
-          <CTA to="/locations">Get Directions</CTA>
-          <CTA to="/contact">Contact Us</CTA>
+          <CTA to="/services">Our Services</CTA>
+          <CTA to="/schedule">Book Now</CTA>
         </ButtonRow>
       </HeroContent>
     </Wrapper>

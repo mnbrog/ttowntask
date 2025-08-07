@@ -4,11 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import Timeline from '../components/Timeline';
-import team from '../../data/team.json';
-import milestones from '../../data/milestones.json';
 
-// The fixed height has been removed. Height will be set dynamically.
 const HeroContainer = styled.div`
   display: grid;
   grid-template-areas: "hero";
@@ -17,7 +13,6 @@ const HeroContainer = styled.div`
   overflow: hidden;
 `;
 
-// No background-color is needed as there will be no empty space.
 const HeroImage = styled(GatsbyImage)`
   grid-area: hero;
   width: 100%;
@@ -32,7 +27,7 @@ const HeroContent = styled.div`
   width: 100%;
   height: 100%;
   z-index: 2;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.55);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,23 +61,10 @@ const SectionTitle = styled.h2`
   margin-bottom: 1rem;
 `;
 
-const OwnerCard = styled.div`
-  background: var(--light-grey);
-  border-radius: 15px;
-  padding: 2rem;
-  box-shadow: var(--shadow);
-  text-align: left;
-
-  h3 {
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-`;
-
 const AboutPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      heroImage: file(relativePath: { eq: "kgp-042.jpg" }) {
+      heroImage: file(relativePath: { eq: "tttabout.png" }) {
         childImageSharp {
           gatsbyImageData(
             layout: FULL_WIDTH
@@ -96,54 +78,40 @@ const AboutPage = () => {
 
   const image = getImage(data.heroImage);
 
-  // --- CHANGES ARE HERE ---
-  // 1. Calculate the image's aspect ratio
+  // Calculate the image's aspect ratio and the container height needed to match it
   const aspectRatio = image.height / image.width;
-
-  // 2. Calculate the container height needed to match the aspect ratio
   const heroHeight = `calc(100vw * ${aspectRatio})`;
 
   return (
     <Layout>
-      <SEO title="About Us" description="Learn about Sheffield Collision Center" />
+      <SEO title="About Us" description="Learn about T-Town Task" />
 
-      {/* 3. Apply the dynamic height as an inline style */}
       <HeroContainer style={{ height: heroHeight }}>
-        {/* 4. The image now fits perfectly, so no extra props are needed */}
         <HeroImage 
           image={image} 
-          alt="The Sheffield's Collision Center workshop"
+          alt="A person doing various tasks"
         />
         <HeroContent>
-          <HeroTitle>Our Story</HeroTitle>
+          <HeroTitle>No Job Too Small, We Do It All.</HeroTitle>
         </HeroContent>
       </HeroContainer>
 
       <AboutWrapper>
         <Section>
-          <SectionTitle>Who We Are</SectionTitle>
+          <SectionTitle>About T-Town Task</SectionTitle>
           <p>
-            Sheffield's Collision Center was founded in 2019 with a clear mission: to provide the highest quality auto body repair and customer service in the Columbus, Georgia area. While our shop may be relatively new, our roots in the auto body industry run deep; with over 35 years of combined experience, our team brings a wealth of knowledge, craftsmanship, and passion to every vehicle we service.
+            T-Town Task is your go-to solution for getting things done in the community. Whether you're a busy student, a new homeowner, or just need an extra hand, our mission is to make your life easier by handling a wide range of tasks. From the heavy lifting of a move to the detailed work of assembling furniture, our team is committed to providing reliable, efficient, and stress-free service.
           </p>
           <p>
-            We understand how important your vehicle is to your daily life, and we treat every car like it’s our own. Each member of our team undergoes rigorous, hands-on training to meet our high standards of quality. It’s not just about fixing cars; it’s about earning your trust and delivering peace of mind.
-          </p>
-          <p>
-            At Sheffield’s, our reputation is everything. We pride ourselves on honest communication, expert workmanship, and a commitment to excellence that shows in every job we complete. Leave your car with professionals who truly care, and who have the experience to prove it.
+            We pride ourselves on being a versatile and trustworthy resource. We're here to tackle the jobs you don't have time for, ensuring everything is done to your satisfaction. Our team is dedicated to honest communication and a commitment to excellence, so you can always count on us to deliver quality work.
           </p>
         </Section>
 
         <Section>
-          <SectionTitle>About the Owner</SectionTitle>
-          <OwnerCard>
-            <h3>Thurston Sheffield</h3>
-            <p>
-              Thurston Sheffield, owner of Sheffield's Collision Center, began his career in auto repair at just 19 years old. With a strong foundation in both hands-on repair and insurance adjusting, he brings a unique and valuable perspective to the collision repair process. Over the past 35 years, Thurston has built a reputation for integrity, hard work, and a relentless drive for improvement.
-            </p>
-            <p>
-              His background in insurance adjusting allows him to navigate the repair process with efficiency and transparency, always advocating for the best outcome for his customers. While his experience is vast, Thurston remains a lifelong learner, continually adapting to changes in technology and industry standards. His leadership and commitment to excellence are at the core of everything we do at Sheffield’s, ensuring every customer leaves satisfied and confident in the work we've done.
-            </p>
-          </OwnerCard>
+          <SectionTitle>Our Promise</SectionTitle>
+          <p>
+            By agreeing to hire T-Town Task for any services, you acknowledge that T-Town Task, its owners, employees, and affiliates are not liable for any property damage, incomplete or faulty repairs, or any resulting injury to persons or surrounding areas. Our priority is to perform every task with the utmost care and professionalism, but this disclaimer outlines the limits of our liability.
+          </p>
         </Section>
       </AboutWrapper>
     </Layout>

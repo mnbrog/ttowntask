@@ -6,13 +6,13 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import ServiceCard from '../components/ServiceCard';
 import services from '../../data/services.json';
+import { FaTruckMoving, FaBroom, FaTools, FaSprayCan, FaLeaf, FaBoxOpen } from 'react-icons/fa';
 
 const HeroContainer = styled.div`
   display: grid;
   position: relative;
   align-items: center;
   justify-items: center;
-  /* Make height responsive to the screen size */
   height: 60vh;
   min-height: 400px;
   max-height: 600px;
@@ -21,7 +21,7 @@ const HeroContainer = styled.div`
 const HeroImage = styled(GatsbyImage)`
   grid-area: 1/1;
   width: 100%;
-  height: 100%; /* Make image fill the container */
+  height: 100%;
 `;
 
 const HeroContent = styled.div`
@@ -37,7 +37,7 @@ const HeroContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
- background: rgba(0, 0, 0, 0.4); <-- This line was removed */
+  background: rgba(0, 0, 0, 0.4);
 `;
 
 const PageTitle = styled.h1`
@@ -69,17 +69,32 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 `;
+
+// Map service titles to icons
+const serviceIcons = {
+  "Move-In / Move-Out Help": <FaTruckMoving />,
+  "Cleaning Services": <FaBroom />,
+  "Furniture Assembly / Wall Hanging": <FaTools />,
+  "Pressure Washing": <FaSprayCan />,
+  "Grass Cutting": <FaLeaf />,
+  "Unpacking / Organizing": <FaBoxOpen />
+};
 
 const ServicesPage = () => {
     const data = useStaticQuery(graphql`
         query {
-            heroImage: file(relativePath: { eq: "kgp-065.jpg" }) {
+            heroImage: file(relativePath: { eq: "tttservice.png" }) {
                 childImageSharp {
                     gatsbyImageData(
                         layout: FULL_WIDTH
                         placeholder: BLURRED
-                        formats: [AUTO, JPG]
+                        formats: [AUTO, WEBP, AVIF]
                     )
                 }
             }
@@ -90,14 +105,14 @@ const ServicesPage = () => {
 
     return (
         <Layout>
-            <SEO title="Services" description="Auto body and repair services for all makes and models." />
+            <SEO title="Services" description="A wide range of services to help with all your home tasks, big or small." />
 
             <HeroContainer>
-                <HeroImage image={image} alt="Professional auto repair services" />
+                <HeroImage image={image} alt="T-Town Task Services" />
                 <HeroContent>
-                    <PageTitle>Repair Services for ALL Makes & Models</PageTitle>
+                    <PageTitle>No Job Too Small, We Do It All</PageTitle>
                     <PageSubtitle>
-                        At Sheffield's Collision Center, we offer top-tier auto body repair services for all makes and models. Whether it's a minor dent or major collision damage, we’ve got the experience and expertise to get your vehicle back on the road in no time.
+                        From yard work to moving, we offer a wide range of services to help you tackle your to-do list. Let us handle the heavy lifting and the dirty work so you don't have to.
                     </PageSubtitle>
                 </HeroContent>
             </HeroContainer>
@@ -109,6 +124,7 @@ const ServicesPage = () => {
                             key={service.title}
                             title={service.title}
                             description={service.description}
+                            icon={serviceIcons[service.title]}
                         />
                     ))}
                 </Grid>

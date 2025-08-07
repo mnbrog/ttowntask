@@ -1,26 +1,32 @@
 [
-   {
-            "title": "Collision Repair",
-            "description": "From frame straightening to paintless dent repair, we handle it all with precision."
-          },
-          {
-            "title": "Insurance Claim Assistance",
-            "description": "Present us with your original insurance appraisal, and we’ll take over the entire claim negotiation process to ensure you get the coverage you deserve."
-          },
-          {
-            "title": "Lifetime Guarantee",
-            "description": "All of our collision repairs come with a written lifetime guarantee for as long as you own your vehicle."
-          },
-          {
-            "title": "Fast Scheduling",
-            "description": "Our streamlined scheduling process reduces repair time, so you’re back on the road faster."
-          },
-          {
-            "title": "Pickup & Delivery",
-            "description": "We offer convenient pickup and delivery services in the Columbus/Phenix City area, making your experience hassle-free."
-          },
-          {
-            "title": "Rental Assistance",
-            "description": "Need a rental car? We’ll provide transportation to rental companies to ensure you're not left without a vehicle."
-          }
+  {
+    "title": "Move-In / Move-Out Help",
+    "description": "We’ll handle the heavy lifting! Includes 2 workers to help you move in or out with ease. (We only provide the workers, no trailer or truck provided)",
+    "icon": "FaTruckMoving"
+  },
+  {
+    "title": "Cleaning Services",
+    "description": "A deep clean for your dorm, apartment, or house. We are not a cleaning company but here to clean up your mess! Includes 1-2 workers.",
+    "icon": "FaBroom"
+  },
+  {
+    "title": "Furniture Assembly / Wall Hanging",
+    "description": "From desks to dressers to pictures on the wall and even TVs—our pros will assemble and mount it all. Includes 1-2 workers.",
+    "icon": "FaTools"
+  },
+  {
+    "title": "Pressure Washing",
+    "description": "Professional pressure washing for driveways, patios, siding, and more. We’ll remove dirt, grime, and stains to restore your home’s curb appeal. Quick, affordable, and hassle-free — let us handle the dirty work!",
+    "icon": "FaSprayCan"
+  },
+  {
+    "title": "Grass Cutting",
+    "description": "Keep your yard clean and crisp with mowing, edging, and cleanup. 1-2 workers provided.",
+    "icon": "FaLeaf"
+  },
+  {
+    "title": "Unpacking / Organizing",
+    "description": "Unpacking and organizing services for college students settling into their dorms or apartments, and for new homeowners getting moved in. We’ll help you get everything out of boxes and into place — quickly, neatly, and stress-free.",
+    "icon": "FaBoxOpen"
+  }
 ]

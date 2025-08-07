@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import logo from '../../images/NEW SCC LOGO (2).png'; // Adjust path if needed
+import logo from '../../images/ttowntasklogotrans.png'; // Adjust path if needed
 
 const Wrapper = styled.div`
   overflow-x: auto;

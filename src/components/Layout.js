@@ -6,8 +6,8 @@ import { Helmet } from 'react-helmet';
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --primary-color: #045990; /* A deeper, more modern teal */
-    --secondary-color: #98b5f1;
+    --primary-color: #a12237; /* A deeper, more modern teal */
+    --secondary-color: #828A8F;
     --dark-grey: #333;
     --light-grey: #f5f5f5;
     --white: #fff;

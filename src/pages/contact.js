@@ -58,7 +58,7 @@ const ContactPage = () => {
   // Query for the hero image
   const data = useStaticQuery(graphql`
     query {
-      contactHero: file(relativePath: { eq: "kgp-096.jpg" }) {
+      contactHero: file(relativePath: { eq: "contacttt.png" }) {
         childImageSharp {
           gatsbyImageData(
             layout: FULL_WIDTH

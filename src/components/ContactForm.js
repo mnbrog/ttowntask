@@ -29,7 +29,7 @@ const Input = styled.input`
 
   &:focus {
     outline: none;
-    border-color: #045990;
+    border-color: #828A8F;
   }
 `;
 
@@ -62,7 +62,7 @@ const TextArea = styled.textarea`
 `;
 
 const Button = styled.button`
-  background: #045990;
+  background: #828A8F;
   color: #fff;
   padding: 0.85rem;
   border: none;
@@ -73,7 +73,7 @@ const Button = styled.button`
   transition: background-color 0.2s;
 
   &:hover {
-    background-color: #03446d;
+    background-color: #828A8F;
   }
 
   &:disabled {
