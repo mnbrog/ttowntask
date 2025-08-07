@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'T-Twon Task',
+    title: 'T-Town Task',
     description: 'No Job Too Small, We Do It All',
     siteUrl: 'https://www.ttowntask.com',
   },
