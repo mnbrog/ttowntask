@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Columbus Location",
+    "address": "1655 Whittlesey Rd, Columbus, GA 31904",
+    "phone": "(706) 940-0120",
+    "hours": "Mon-Sat 8am-5:30pm"
+  },
+  {
+    "name": "Midland Location",
+    "address": "7170 Beaver Run Road, Midland, GA 31820",
+    "phone": "(706) 940-0120",
+    "hours": "Mon-Sat 8am-5:30pm"
+  }
+]
