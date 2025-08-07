@@ -20,5 +20,6 @@ module.exports = {
         path: `${__dirname}/images`,
       },
     },
+    'gatsby-plugin-sitemap',
   ],
 };
