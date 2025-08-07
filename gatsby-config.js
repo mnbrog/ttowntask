@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Sheffield Collision Center',
-    description: 'Collision repair you can trust in Sheffield.',
-    siteUrl: 'https://www.sheffieldscollisioncenter.com',
+    title: 'T-Twon Task',
+    description: 'No Job Too Small, We Do It All',
+    siteUrl: 'https://www.ttowntask.com',
   },
   plugins: [
     'gatsby-plugin-image',

@@ -53,6 +53,7 @@ const AboutWrapper = styled.div`
 
 const Section = styled.section`
   margin-bottom: 3rem;
+  font-weight: normal;
 `;
 
 const SectionTitle = styled.h2`

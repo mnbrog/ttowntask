@@ -38,7 +38,8 @@ const Description = styled.p`
   font-size: 1rem;
   line-height: 1.6;
   flex-grow: 1; /* Allows the description to fill the remaining space */
-`;
+  font-weight: normal;
+  `;
 
 const ServiceCard = ({ title, description, icon }) => {
   return (

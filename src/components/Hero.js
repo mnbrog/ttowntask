@@ -51,7 +51,7 @@ const Headline = styled.h1`
 const Subheadline = styled.h2`
   margin: 0 0 2rem;
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 300;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 
   @media (max-width: 768px) {

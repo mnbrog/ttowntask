@@ -39,12 +39,14 @@ const SchedulePage = () => {
         </Subtitle>
         <SchedulerWrapper>
           <iframe
-            src="https://app.squarespacescheduling.com/schedule.php?owner=df169624"
+            src="https://app.acuityscheduling.com/schedule.php?owner=36489426&ref=embedded_csp"
+            title="Schedule Appointment"
             width="100%"
-            height="800"
+            height="2000"
             frameBorder="0"
-            title="Scheduling Appointment"
+            allow="payment"
           ></iframe>
+          <script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript"></script>
         </SchedulerWrapper>
       </ScheduleContainer>
     </Layout>

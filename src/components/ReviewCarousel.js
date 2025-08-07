@@ -31,6 +31,7 @@ const Card = styled.div`
   text-align: center;
   /* Add flex-shrink to prevent card from squishing on some devices */
   flex-shrink: 0;
+  font-weight: normal;
 `;
 
 const StarsAndLogo = styled.div`
