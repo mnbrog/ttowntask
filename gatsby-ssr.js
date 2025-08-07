@@ -1,32 +1,25 @@
 import React from "react";
 
-// This function runs on the server to add components to the <head> and before the <body>
-export const onRenderBody = ({ setHeadComponents, setPreBodyComponents }) => {
-  // Add the Google Tag Manager script to the <head>
+// This function runs on the server to add components to the <head>
+export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
+    // Google tag (gtag.js) script
     <script
-      key="gtm-script"
+      key="google-analytics-script"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-VF9GCJ93ZT"
+    />,
+    // Google Analytics dataLayer configuration
+    <script
+      key="google-analytics-config"
       dangerouslySetInnerHTML={{
         __html: `
-          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-KK6Z54TR');
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-VF9GCJ93ZT');
         `,
       }}
     />,
-  ]);
-
-  // Add the Google Tag Manager noscript iframe just after the opening <body> tag
-  setPreBodyComponents([
-    <noscript key="gtm-noscript">
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-KK6Z54TR"
-        height="0"
-        width="0"
-        style={{ display: "none", visibility: "hidden" }}
-      ></iframe>
-    </noscript>,
   ]);
 };
