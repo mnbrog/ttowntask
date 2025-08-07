@@ -47,7 +47,7 @@ const Footer = () => (
   <Foot>
     <ContactContainer>
       <ContactLink href="tel:+12056577554">Call or Text</ContactLink>
-      <ContactLink href="mailto:ttowntask@gmail.com">Email Us</ContactLink>
+      <ContactLink href="mailto:whittwinfield@yahoo.com">Email Us</ContactLink>
     </ContactContainer>
     <Copyright>
       © {new Date().getFullYear()} T-Town Task.<br />
