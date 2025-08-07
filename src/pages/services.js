@@ -112,8 +112,7 @@ const ServicesPage = () => {
                 <HeroContent>
                     <PageTitle>No Job Too Small, We Do It All</PageTitle>
                     <PageSubtitle>
-                        From yard work to moving, we offer a wide range of services to help you tackle your to-do list. Let us handle the heavy lifting and the dirty work so you don't have to.
-                    </PageSubtitle>
+From yard work, cleaning, and furniture assembly to junk removal, moving help, pressure washing, and small home repairs, we offer a full range of services to make life easier. Whether it’s heavy lifting or dirty work, we handle it all so you can focus on what matters most.                    </PageSubtitle>
                 </HeroContent>
             </HeroContainer>
 
