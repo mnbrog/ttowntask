@@ -16,13 +16,14 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    font-family: 'Quicksand', 'Inter', 'Open Sans', sans-serif;
+    font-family: 'University Roman', serif;
+    font-weight: bold;
     background: var(--white);
     color: var(--dark-grey);
   }
 
   h1, h2, h3 {
-    font-weight: 600;
+    font-weight: bold;
   }
 `;
 
@@ -53,10 +54,8 @@ const Layout = ({ children }) => (
       `,
         }}
       />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
       <link
-        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
+        href="https://fonts.cdnfonts.com/css/university-roman"
         rel="stylesheet"
       />
     </Helmet>
